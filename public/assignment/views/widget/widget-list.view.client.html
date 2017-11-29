@@ -1,0 +1,98 @@
+widget-list.view.client.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.25, user-scale = no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <p class="navbar-text pull-left">
+                <a href="/assgnment/page/page-list.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left">
+                    </span>
+                </a>
+            </p>
+            <a class="navbar-brand" href="#">
+                Widgets
+            </a>
+            <p class="navbar-text pull-right">
+                <a href="/assgnment/widget/widget-chooser.html" class="navbar-link">
+          <span class="glyphicon glyphicon-plus">
+          </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</nav>
+
+    <div class="container">
+        <div ng-repeat="widget in model.widgets" class="jga-widget">
+            <div class="jga-widget-tool">
+                <a href="#">
+                    <span class="glyphicon glyphiocon-cog"></span>
+                </a>
+                <span class="glyphicon glyphiocon-align-justify"></span>
+            </div>
+            {{widget}}
+            <div ng-switch="widget.widgetType">
+                <div ng-switch-when="HEADER" ng-switch="widget.size">
+                    <h1 ng-switch-when="1">{{widget.text}}</h1>
+                    <h2 ng-switch-when="2">{{widget.text}}</h2>
+                    <h3 ng-switch-when="3">{{widget.text}}</h3>
+                </div>
+                <div ng-switch-when="HTML">
+                    <div ng-bind-html="model.getSafeHtml(widget)"></div>
+                </div>
+                <div ng-switch-when="IMAGE">
+                    <img ng-src="{{widget.url}}" width="{{widget.width}}"/>
+                </div>
+                <div ng-switch-when="YOUTUBE"></div>
+                    <h1>{{widget.url}}</h1>
+                    <iframe width = "{{widget.width}}" ng-src="{{model.getSafeUrl(widget)}}" frameborder="0" allowfullscreen></iframe>
+                <div ng-switch-default>
+                    Unabele to render widget
+                </div>
+            </div>
+        </div>
+
+        <div class="jga-widget">
+            <div class="jga-widget-tool">
+                <a href="#">
+                    <span class="glyphicon glyphiocon-cog"></span>
+                </a>
+                <span class="glyphicon glyphiocon-align-justify"></span>
+            </div>
+            <iframe width="100%" height="" src="http://www.youtube.com/embed/aD4grQXZPfg" frameborder="0"></iframe>
+        </div>
+    </div>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text">
+            <div class="col-xs-3 text-center">
+            </div>
+            <div class="col-xs-3 text-center">
+            </div>
+            <div class="col-xs-3 text-center">
+            </div>
+            <div class="col-xs-3 text-center">
+                <a href="/assignment/user/profile.html">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>

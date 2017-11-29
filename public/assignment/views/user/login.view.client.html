@@ -1,0 +1,28 @@
+login.view.client.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        {{hello}}
+
+        <h1>Login</h1>
+        <input type="text"
+               ng-model="username"
+               class="form-control"
+               placeholder="username"/>
+        <input type="password"
+               class="form-control"
+               placeholder="password"/>
+        <a class="btn btn-primary btn-block"
+           href="#/profile">Login</a>
+        <a class="btn btn-success btn-block"
+           href="#/register">Register</a>
+    </div>
+</body>
+</html>

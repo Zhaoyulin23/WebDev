@@ -1,0 +1,36 @@
+widget-edit.view.client.html
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <p class="navbar-text pull-left">
+                <a href="/assgnment/page/page-list.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left">
+                    </span>
+                </a>
+            </p>
+            <a class="navbar-brand" href="#">
+                Widgets Edit
+            </a>
+            <p class="navbar-text pull-right">
+                <a href="/assgnment/widget/widget-chooser.html" class="navbar-link">
+          <span class="glyphicon glyphicon-plus">
+          </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</nav>
+
+<div class = "container">
+
+    URL
+    <input ng-model="model.widget.url" class="form-control"/>
+
+    <form action="/api/uploads" method="post" enctype=""/>
+        <input name="myFile"  type="file" class="form-control"/>
+        <input name="width"  value="{{model.widget.width}}" />
+        <input name="widgetId" value="{{model.widget._id}}" />
+        <button type="submit" class="btn btn-block btn-primary" />
+    </form>
+
+</div>

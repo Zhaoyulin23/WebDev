@@ -1,0 +1,22 @@
+index.html
+<!DOCTYPE html>
+<html lang="en" ng-app="ToDoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script src="todos.js"></script>
+</head>
+<body>
+    <div class="container" ng-controller="TodosController as model">
+        <h1>Todo App</h1>
+
+        <todos data="model.data"
+               callback="model.reorderTodos(start, end)"></todos>
+    </div>
+</body>
+</html>

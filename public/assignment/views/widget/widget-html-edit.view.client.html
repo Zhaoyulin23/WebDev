@@ -1,0 +1,36 @@
+widget-html-edit.view.client.html
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <p class="navbar-text pull-left">
+                <a href="/assgnment/page/page-list.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left">
+                    </span>
+                </a>
+            </p>
+            <a class="navbar-brand" href="#">
+                HTML Widgets Edit
+            </a>
+            <p class="navbar-text pull-right">
+                <a href="/assgnment/widget/widget-chooser.html" class="navbar-link">
+          <span class="glyphicon glyphicon-plus">
+          </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</nav>
+
+<div class = "container">
+
+    <div ng-model="model.widget.text"
+         text-angular
+         ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+        ['indent','outdent'],['html']]">
+    </div>
+    {{model.widget.html}}
+
+    <div ng-bind-html="model.widget.html"></div>
+
+</div>

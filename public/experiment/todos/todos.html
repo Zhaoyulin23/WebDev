@@ -1,0 +1,30 @@
+todos.html
+<table class="table">
+    <thead>
+        <tr>
+            <th ng-repeat="(key,value)in data[0]">
+                {{key}}
+            </th>
+            <th>Priority</th>
+            <th>Title</th>
+            <th>Todo</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in data">
+        <td ng-repeat="(key,value) in row">
+            {{value}}
+        </td>
+    </tr>
+        <tr ng-repeat="todo in data | orderBy : 'priority'">
+            <td>{{todoObj.priority}}</td>
+            <td>{{todoObj.title}}</td>
+            <td>cs5610</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+    </tbody>
+</table>
+
+{{tasks}}

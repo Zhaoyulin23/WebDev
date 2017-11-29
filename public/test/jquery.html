@@ -1,0 +1,32 @@
+jquery.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/jquery-ui.css" rel="stylesheet"/>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+</head>
+<body>
+
+    <h1>Hello World</h1>
+
+    <script>
+        jQuery();
+
+        for(var i=0; i<4; i++){
+            list.append("<li>Item" + i + "</li>");
+        }
+
+        for(var i=10; i<14; i++){
+            var li = $("<li>Item" + i + "</li>");
+            list.append(li);
+        }
+
+        list.sortable({
+            axis: 'y'
+        });
+    </script>
+</body>
+</html>
